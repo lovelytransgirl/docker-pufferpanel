@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  pufferpanel:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - pufferpanel_data:/var/lib/pufferpanel
+    environment:
+      - ADMIN_EMAIL=example@example.com
+      - ADMIN_NAME=admin
+      - ADMIN_PASSWORD=password
+
+volumes:
+  pufferpanel_data:
+    name: pufferpanel_data
